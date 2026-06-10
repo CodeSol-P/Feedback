@@ -1,0 +1,107 @@
+<!-- CONTENEDOR PRINCIPAL -->
+<div id="app">
+  <DOCTYPE html>
+  <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reporte diario de entrega</title>
+    <link rel="stylesheet" href="styles.css" /> 
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+  <!-- ENCABEZADO -->
+  <div class="header">
+    <h1>Reporte diario de entrega</h1>
+    <p>¡Contanos como estuvo tu dia!</p>
+  </div>
+
+  <!-- SECCION: OPERADOR LOGISTICO -->
+<div class="card">
+  <label class="label">Operador logístico</label>
+  <select id="operador">
+    <option value="">-- Seleccioná una opción --</option>
+    <option value="Cargo">Cargo</option>
+    <option value="Rio de las Vueltas">Rio de las Vueltas</option>
+  </select>
+</div>
+  
+  <!-- SECCIÓN: NOMBRE -->
+  <div class="card">
+    <label class="label">Nombre completo</label>
+    <input type="text" id="nombre" placeholder="Ej: Juan Pérez" />
+  </div>
+
+  <!-- SECCIÓN: ESTRELLAS -->
+  <div class="card">
+    <label class="label">¿Cómo estuvo el día? (1 a 5 estrellas)</label>
+    <div class="estrellas" id="estrellas">
+      <span class="estrella" data-valor="1">★</span>
+      <span class="estrella" data-valor="2">★</span>
+      <span class="estrella" data-valor="3">★</span>
+      <span class="estrella" data-valor="4">★</span>
+      <span class="estrella" data-valor="5">★</span>
+    </div>
+  </div>
+
+    <!-- SECCIÓN:Disparador de KPI -->
+  <div class="card">
+ <label class="label">¿Sobre que indicador queres evaluarte?</label>
+    <select id="kpi">
+    <option value="">-- Seleccioná una opción --</option>
+    <option value="Rechazo">Rechazo</option>
+    <option value="Notificaciones > 2min">Notificaciones >2min</option>
+      <option value="Adherencia al Radio">Adherencia al Radio</option>
+      <option value="Modulaciones">Modulaciones</option>
+      <option value="RMD">RMD</option>
+  </select>
+</div>
+
+  <!-- SECCIÓN: COMENTARIO LIBRE -->
+  <div class="card">
+    <label class="label">Comentanos que es lo que ocurrio </label>
+    <textarea id="comentario" placeholder="Evalua tu propio indicador" rows="6"></textarea>
+  </div>
+
+  <!-- SECCIÓN: 5 POR QUÉ -->
+<div class="card">
+  <label class="label">Análisis de 5 ¿Por qué?</label>
+   <input type="text" id="Problema Ocurrido" placeholder="Problema Ocurrido" class="porque-input" />
+  <input type="text" id="porque1" placeholder="1° ¿Por qué? * obligatorio" class="porque-input" />
+  <input type="text" id="porque2" placeholder="2° ¿Por qué? * obligatorio" class="porque-input" /> 
+  <input type="text" id="porque3" placeholder="3° ¿Por qué?" class="porque-input" />
+  <input type="text" id="porque4" placeholder="4° ¿Por qué?" class="porque-input" />
+  <input type="text" id="porque5" placeholder="5° ¿Por qué?" class="porque-input" />
+</div>
+    
+  <!-- SECCIÓN: PROBLEMAS -->
+  <div class="card">
+    <label class="label">¿Tuviste algún otro problema? (podés elegir varios)</label>
+    <div class="tags" id="tags">
+      <span class="tag" data-valor="Dirección incorrecta">Dirección incorrecta</span>
+      <span class="tag" data-valor="Cliente ausente/Cerrado">Cliente ausente/Cerrado</span>
+      <span class="tag" data-valor="Demora en tráfico">Demora en tráfico</span>
+      <span class="tag" data-valor="Problema con la mercaderia">Problema con la mercaderia</span>
+      <span class="tag" data-valor="Demoras en el pago">Demoras en el pago</span>
+      <span class="tag" data-valor="Sin problemas">Sin problemas</span>
+      <span class="tag" data-valor="Otro"> Otro</span>
+    </div>
+  </div>
+
+   <!-- BOTON ENVIAR -->
+  <button class="btn-enviar" onclick="enviarFeedback()">Enviar feedback</button>
+
+  <!-- SECCION: REGISTROS -->
+  <div class="card" id="seccion-registros" style="display:none">
+    <div class="registros-header">
+      <span class="label">Registros del dia</span>
+      <button class="btn-excel" onclick="descargarExcel()">Descargar Excel</button>
+    </div>
+    <div id="lista-registros"></div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+ 

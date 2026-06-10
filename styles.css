@@ -1,0 +1,127 @@
+/* Reseteo general */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f2f0;
+  padding: 1rem;
+}
+
+#app { max-width: 500px; margin: 0 auto; }
+
+.header {
+  background: #1D9E75;
+  color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
+.header h1 { font-size: 25px; }
+.header p { font-size: 14px; opacity: 0.85; margin-top: 0px; }
+
+
+.card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.label {
+  display: block;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+/* Estilos compartidos para input, textarea y select */
+input, textarea, select {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  background: white;
+  cursor: pointer;
+}
+
+/* NUEVO: estilo especifico del select */
+select {
+  appearance: none;   /* quita la flecha nativa del navegador */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+.estrellas { display: flex; gap: 8px; margin-top: 4px; }
+.estrella { font-size: 32px; color: #ddd; cursor: pointer; transition: color 0.2s; }
+.estrella.activa { color: #F0A500; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.tag { font-size: 13px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ddd; cursor: pointer; transition: all 0.2s; }
+.tag.seleccionada { background: #E1F5EE; color: #0F6E56; border-color: #1D9E75; }
+
+.btn-enviar {
+  width: 100%; padding: 14px; background: #1D9E75;
+  color: white; border: none; border-radius: 10px;
+  font-size: 16px; font-weight: bold; cursor: pointer; margin-bottom: 1rem;
+}
+.btn-enviar:hover { background: #0F6E56; }
+
+.registros-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+
+.btn-excel {
+  font-size: 13px; padding: 6px 14px;
+  border: 1px solid #1D9E75; color: #1D9E75;
+  background: white; border-radius: 8px; cursor: pointer;
+}
+
+.registro {
+  background: #f9f9f9; border-radius: 8px;
+  padding: 10px 14px; margin-bottom: 8px;
+  font-size: 13px; border-left: 3px solid #1D9E75;
+}
+
+/* --- 5 POR QUE --- */
+
+.porque-input {
+  margin-bottom: 10px;
+}
+
+.porque-input:last-child {
+  margin-bottom: 0;
+}
+
+/* Focus bonito */
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #1D9E75;
+  box-shadow: 0 0 0 3px rgba(29, 158, 117, 0.15);
+}
+
+/* Textarea más cómoda */
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Hover tags */
+
+.tag:hover {
+  border-color: #1D9E75;
+  color: #1D9E75;
+}
+
+/* Hover estrellas */
+
+.estrella:hover {
+  transform: scale(1.08);
+}
